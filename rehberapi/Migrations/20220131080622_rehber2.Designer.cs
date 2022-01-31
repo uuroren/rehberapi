@@ -9,8 +9,8 @@ using rehberapi.Context;
 namespace rehberapi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220128141733_rehber")]
-    partial class rehber
+    [Migration("20220131080622_rehber2")]
+    partial class rehber2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,16 +30,19 @@ namespace rehberapi.Migrations
                     b.Property<string>("ad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("firma")
+                    b.Property<string>("email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("iletisim")
+                    b.Property<string>("firma")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("konum")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("soyad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("telefon")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UUId");

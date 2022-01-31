@@ -28,16 +28,19 @@ namespace rehberapi.Migrations
                     b.Property<string>("ad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("firma")
+                    b.Property<string>("email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("iletisim")
+                    b.Property<string>("firma")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("konum")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("soyad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("telefon")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UUId");

@@ -2,7 +2,7 @@
 
 namespace rehberapi.Migrations
 {
-    public partial class rehber : Migration
+    public partial class rehber2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,8 @@ namespace rehberapi.Migrations
                     ad = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     soyad = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     firma = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    iletisim = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    telefon = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     konum = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

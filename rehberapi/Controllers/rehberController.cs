@@ -25,7 +25,7 @@ namespace rehberapi.Controllers
         [Route("getRehberDetails")]
         public IActionResult getRehberDetails(int id)
         {
-            var getrehber = _context.Rehbers.Select(x => new { x.UUId, x.ad, x.soyad, x.iletisim,x.konum}).Where(x => x.UUId == id).FirstOrDefault();
+            var getrehber = _context.Rehbers.Select(x => new { x.UUId, x.ad, x.soyad, x.telefon,x.konum}).Where(x => x.UUId == id).FirstOrDefault();
             if (getrehber == null)
             {
                 return NotFound();
@@ -39,6 +39,7 @@ namespace rehberapi.Controllers
             var rehber = new rehber();
             rehber.ad=rehbers.ad;
             rehber.soyad = rehbers.soyad;
+            rehber.firma = rehbers.firma;
             _context.Add(rehber);
             _context.SaveChanges();
             return Ok(rehbers.UUId);
@@ -52,7 +53,9 @@ namespace rehberapi.Controllers
             {
                 return NotFound();
             }
-            rehberDelete.iletisim = rehbers.iletisim;
+            rehberDelete.email = rehbers.email;
+            rehberDelete.telefon = rehbers.telefon;
+            rehberDelete.konum = rehbers.konum;
             _context.Update(rehberDelete);
             _context.SaveChanges();
             return Ok(rehbers.UUId);
@@ -66,7 +69,9 @@ namespace rehberapi.Controllers
             {
                 return NotFound();
             }
-            rehberDelete.iletisim = null;
+            rehberDelete.email = null;
+            rehberDelete.telefon = null;
+            rehberDelete.konum = null;
             _context.Update(rehberDelete);
             _context.SaveChanges();
             return Ok(rehbers.UUId);
@@ -96,8 +101,7 @@ namespace rehberapi.Controllers
                 return NotFound();
             }
             rehberDelete.ad = rehbers.ad;
-            rehberDelete.soyad = rehbers.ad;
-            rehberDelete.iletisim = rehbers.ad;
+            rehberDelete.soyad = rehbers.soyad;
             _context.Rehbers.Update(rehberDelete);
             _context.SaveChanges();
             return NoContent();

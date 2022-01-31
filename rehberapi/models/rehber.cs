@@ -9,7 +9,8 @@ namespace rehberapi.models
         public string ad { get; set; }
         public string soyad { get; set; }
         public string firma { get; set; }
-        public string iletisim { get; set; }
+        public string email { get; set; }
+        public string telefon { get; set; }
         public string konum { get; set; }
     }
 }
